@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Ecommerce Site",
+    "category": [
+      "Web Development",
+      "UI/UX Design"
+    ],
+    "image": "https://dummyimage.com/600x400/000/fff&text=Ecommerce+Site",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies ultrices, nunc nunc ultricies nunc, nec ult"
+  },
+  {
+    "id": 2,
+    "name": "Mobile Game",
+    "category": [
+      "Game Development",
+      "Mobile"
+    ],
+    "image": "https://dummyimage.com/600x400/000/fff&text=Mobile+Game",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies ultrices, nunc nunc ultricies nunc, nec ult"
+
+  },
+  {
+    "id": 3,
+    "name": "Finance App",
+    "category": [
+      "Web Development",
+      "Mobile",
+      "Finance"
+    ],
+    "image": "https://dummyimage.com/600x400/000/fff&text=Finance+App",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies ultrices, nunc nunc ultricies nunc, nec ult"
+  },
+  {
+    "id": 4,
+    "name": "Music Website",
+    "category": [
+      "Web Development",
+      "Music"
+    ],
+    "image": "https://dummyimage.com/600x400/000/fff&text=Music+Website",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies ultrices, nunc nunc ultricies nunc, nec ult"
+  },
+  {
+    "id": 5,
+    "name": "Travel App",
+    "category": [
+      "Mobile",
+      "Travel",
+      "UI/UX Design"
+    ],
+    "image": "https://dummyimage.com/600x400/000/fff&text=Travel+App",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies ultrices, nunc nunc ultricies nunc, nec ult"
+  },
+  {
+    "id": 6,
+    "name": "Social Media App",
+    "category": [
+      "Mobile",
+      "Social Media",
+      "UI/UX Design"
+    ],
+    "image": "https://dummyimage.com/600x400/000/fff&text=Social+Media+App",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies ultrices, nunc nunc ultricies nunc, nec ult"
+  }
+]

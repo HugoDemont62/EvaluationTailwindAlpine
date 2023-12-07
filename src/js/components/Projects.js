@@ -1,27 +1,21 @@
-export default function Projects(datas) {
+export default function (datas) {
   return {
-    datas: '',
     projects: [],
-    currentCategory: 'all',
-    setCategory(category) {
-      this.currentCategory = category;
+    img: '',
+    open: false,
+    fetchData: async function () {
+      const response = await fetch(datas);
+      this.projects = await response.json();
     },
-    fetchData() {
-      fetch(this.datas)
-      .then(response => response.json())
-      .then(data => this.projects = data)
-      .catch(error => console.error('Erreur de chargement :', error));
+    openImg: function(src) {
+      this.img = src;
+      this.open = true;
     },
-    filteredProjects() {
-      if (this.currentCategory === 'all') {
-        return this.projects;
-      }
-
-      return this.projects.filter(
-        project => project.category.includes(this.currentCategory));
+    closeImg: function() {
+      this.open = false;
     },
-    init() {
+    init: function () {
       this.fetchData();
-    }
+    },
   };
 }
