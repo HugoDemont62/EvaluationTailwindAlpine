@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "question": "Qu'est-ce que Magento?",
+    "answer": "Magento est une plateforme de commerce électronique open source écrite en PHP."
+  },
+  {
+    "id": 2,
+    "question": "Qu'est-ce que PHP?",
+    "answer": "PHP est un langage de script côté serveur couramment utilisé pour le développement web. Il peut être incorporé dans le HTML."
+  },
+  {
+    "id": 3,
+    "question": "Pourquoi choisir le développement web?",
+    "answer": "Le développement web est un domaine en pleine croissance en raison de l'expansion de l'Internet. Il offre également une grande flexibilité et diversité dans les travaux."
+  }
+]

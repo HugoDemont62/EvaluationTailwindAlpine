@@ -3,6 +3,7 @@ import Menu from "./components/Menu";
 import Faq from "./components/Faq";
 import Projects from './components/Projects.js';
 import ContactForm from './components/ContactForm.js';
+import Questions from './components/Questions.js';
 import intersect from "@alpinejs/intersect";
 import persist from "@alpinejs/persist";
 
@@ -21,5 +22,6 @@ window.addEventListener('DOMContentLoaded', () => {
     Alpine.data('faq', Faq);
     Alpine.data('projects', Projects);
     Alpine.data('contactForm', ContactForm);
+    Alpine.data('questions', Questions);
     start();
 });
