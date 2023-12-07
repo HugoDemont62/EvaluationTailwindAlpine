@@ -88,8 +88,8 @@
 </section>
 
 <!-- section A propos -->
-<section class="bg-indigo-600 py-25 px-4 sm:px-6 lg:py-16 lg:px-8 z-10">
-    <div class="lg:max-w-7xl lg:mx-auto lg:flex lg:items-center lg:justify-between">
+<section id="a-propos" class="bg-indigo-600 py-25 px-15 sm:px-6 lg:py-16 lg:px-8 z-10">
+    <div class="px-5 lg:max-w-7xl lg:mx-auto lg:flex lg:items-center lg:justify-between">
         <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             <span class="block">Bonjour, je suis</span>
             <span class="block text-indigo-400">Développeur Magento PHP & Jeux Vidéo.</span>
@@ -105,44 +105,115 @@
     </div>
 
     <div class="px-20" x-data="{ openPanel: null }">
-        <div @click="openPanel === 1 ? openPanel = null : openPanel = 1" class="cursor-pointer faq-item bg-white shadow-md rounded-md my-4 max-w-xl mx-auto p-4 sm:p-6 lg:p-8">
+        <div @click="openPanel === 1 ? openPanel = null : openPanel = 1"
+             class="cursor-pointer faq-item bg-white shadow-md rounded-md my-4 max-w-xl mx-auto p-4 sm:p-6 lg:p-8">
             <h3 class="text-blue-600 mt-2 text-2xl">Qu'est-ce que Magento?</h3>
-            <p x-show.transition.origin.top.duration.1000ms="openPanel === 1" class="text-blue-500 mt-2">Magento est une plateforme de commerce électronique open source écrite en PHP.</p>
+            <p x-show.transition.origin.top.duration.1000ms="openPanel === 1" class="text-blue-500 mt-2">Magento est une
+                plateforme de commerce électronique open source écrite en PHP.</p>
         </div>
-        <div @click="openPanel === 2 ? openPanel = null : openPanel = 2" class="cursor-pointer faq-item bg-white shadow-md rounded-md my-4 max-w-xl mx-auto p-4 sm:p-6 lg:p-8">
+        <div @click="openPanel === 2 ? openPanel = null : openPanel = 2"
+             class="cursor-pointer faq-item bg-white shadow-md rounded-md my-4 max-w-xl mx-auto p-4 sm:p-6 lg:p-8">
             <h3 class="text-blue-600 mt-2 text-2xl">Qu'est-ce que PHP?</h3>
-            <p x-show.transition.origin.top.duration.1000ms="openPanel === 2" class="text-blue-500 mt-2">PHP est un langage de script côté serveur couramment utilisé pour le développement web. Il peut être incorporé dans le HTML.</p>
+            <p x-show.transition.origin.top.duration.1000ms="openPanel === 2" class="text-blue-500 mt-2">PHP est un
+                langage de script côté serveur couramment utilisé pour le développement web. Il peut être incorporé dans
+                le HTML.</p>
         </div>
-        <div @click="openPanel === 3 ? openPanel = null : openPanel = 3" class="cursor-pointer faq-item bg-white shadow-md rounded-md my-4 max-w-xl mx-auto p-4 sm:p-6 lg:p-8">
+        <div @click="openPanel === 3 ? openPanel = null : openPanel = 3"
+             class="cursor-pointer faq-item bg-white shadow-md rounded-md my-4 max-w-xl mx-auto p-4 sm:p-6 lg:p-8">
             <h3 class="text-blue-600 mt-2 text-2xl">Pourquoi choisir le développement web?</h3>
-            <p x-show.transition.origin.top.duration.1000ms="openPanel === 3" class="text-blue-500 mt-2">Le développement web est un domaine en pleine croissance en raison de l'expansion de l'Internet. Il offre également une grande flexibilité et diversité dans les travaux.</p>
+            <p x-show.transition.origin.top.duration.1000ms="openPanel === 3" class="text-blue-500 mt-2">Le
+                développement web est un domaine en pleine croissance en raison de l'expansion de l'Internet. Il offre
+                également une grande flexibilité et diversité dans les travaux.</p>
         </div>
     </div>
 </section>
 
-<section id="portfolio" class="h-screen bg-indigo-100 flex flex-col justify-center items-center" x-data="Projects()">
+<!-- section Portfolio -->
+<section id="portfolio" class="h-screen bg-indigo-100 flex flex-col justify-center items-center"
+         x-data="{
+          ...projects,
+          datas: './public/datas/projects.json',
+          }" x-init="init()">
     <div class="grid grid-cols-3 gap-4 p-4">
         <template x-for="project in filteredProjects()" :key="project.id">
-            <div class="bg-white rounded overflow-hidden shadow-lg">
-                <img class="h-48 w-full object-cover" :src="project.image" alt="Project image">
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2" x-text="project.name"></div>
-                    <p class="text-grey-darker text-base" x-text="project.category.join(', ')"></p>
-                </div>
+            <div class="project-card" :class="project.category">
+                <h2 class="project-title" x-text="project.title"></h2>
+                <p class="project-description" x-text="project.description"></p>
+                <a :href="project.link" class="project-link" target="_blank">View Project</a>
             </div>
         </template>
     </div>
-
-    <!-- Le reste du code reste le même... -->
 </section>
 
-<section id="competences" class="h-screen bg-yellow-500 flex justify-center items-center">
-    <h1 class="text-white text-5xl">Compétences</h1>
+<!-- section Compétences -->
+<section id="competences" class="py-2 bg-indigo-500 flex justify-center items-center">
+    <div class="p-5 lg:max-w-7xl lg:mx-auto lg:flex lg:items-center lg:justify-between">
+        <span class="text-white text-5xl font-bold px-5">Compétences</span>
+        <div class="grid md:grid-cols-3 gap-4">
+            <div class="transform transition duration-500 ease-in-out hover:scale-105 rounded overflow-hidden shadow-lg p-4 bg-white">
+                <img class="w-full h-32 object-cover" src="https://www.wisnet.com/wp-content/uploads/2021/07/vue-js-logo-png-transparent-png.png" alt="Skill image">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Vue.js</div>
+                    <p class="text-gray-700 text-base">
+                        Réalisation de projets avec Vue.js et Nuxt.js.
+                    </p>
+                </div>
+            </div>
+            <div class="transform transition duration-500 ease-in-out hover:scale-105 rounded overflow-hidden shadow-lg p-4 bg-white">
+                <img class="w-full h-32 object-cover" src="https://coursework.vschool.io/content/images/2017/08/react-banner.png" alt="Skill image">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">React</div>
+                    <p class="text-gray-700 text-base">
+                        Réalisation de projets avec React et Next.js.
+                    </p>
+                </div>
+            </div>
+            <div class="transform transition duration-500 ease-in-out hover:scale-105 rounded overflow-hidden shadow-lg p-4 bg-white">
+                <img class="w-full h-32 object-cover" src="https://logos-download.com/wp-content/uploads/2016/09/Node_logo_NodeJS.png" alt="Skill image">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Node.js</div>
+                    <p class="text-gray-700 text-base">
+                        Compétences Node.js acquises lors de projets.
+                    </p>
+                </div>
+            </div>
+
+            <div class="transform transition duration-500 ease-in-out hover:scale-105 rounded overflow-hidden shadow-lg p-4 bg-white">
+                <img class="w-full h-32 object-cover" src="http://lofrev.net/wp-content/photos/2017/05/php_emblem.png" alt="Skill image">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">PHP</div>
+                    <p class="text-gray-700 text-base">
+                        Réalisation de projets avec PHP.
+                    </p>
+                </div>
+            </div>
+            <div class="transform transition duration-500 ease-in-out hover:scale-105 rounded overflow-hidden shadow-lg p-4 bg-white">
+                <img class="w-full h-32 object-cover" src="https://tse3.mm.bing.net/th?id=OIP.ZxqU4dcMgnOkEe_YcZ01EQHaDt&pid=Api" alt="Skill image">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Magento 2</div>
+                    <p class="text-gray-700 text-base">
+                        Projet E-commerce réalisé avec Magento 2.
+                    </p>
+                </div>
+            </div>
+            <div class="transform transition duration-500 ease-in-out hover:scale-105 rounded overflow-hidden shadow-lg p-4 bg-white">
+                <img class="w-full h-32 object-cover" src="https://www.e-spincorp.com/wp-content/uploads/2020/06/laravel-php-framework.jpg" alt="Skill image">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Laravel</div>
+                    <p class="text-gray-700 text-base">
+                        Description de la compétence Node.js.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <section id="contact" class="h-screen bg-purple-500 flex justify-center items-center">
     <h1 class="text-white text-5xl">Contact</h1>
 </section>
+
+
 <script src="https://kit.fontawesome.com/36ce270369.js" crossorigin="anonymous"></script>
 <script type="module" src="/src/main.js"></script>
 </body>

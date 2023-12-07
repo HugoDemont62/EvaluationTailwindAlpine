@@ -1,20 +1,27 @@
-export default function() {
+export default function Projects(datas) {
   return {
-    projects: [
-      { id: 1, name: 'Project 1', category: 'cat1' },
-      { id: 2, name: 'Project 2', category: 'cat2' },
-      // autres projets ici ...
-    ],
+    datas: '',
+    projects: [],
     currentCategory: 'all',
     setCategory(category) {
       this.currentCategory = category;
+    },
+    fetchData() {
+      fetch(this.datas)
+      .then(response => response.json())
+      .then(data => this.projects = data)
+      .catch(error => console.error('Erreur de chargement :', error));
     },
     filteredProjects() {
       if (this.currentCategory === 'all') {
         return this.projects;
       }
 
-      return this.projects.filter(project => project.category === this.currentCategory);
+      return this.projects.filter(
+        project => project.category.includes(this.currentCategory));
     },
+    init() {
+      this.fetchData();
+    }
   };
 }
