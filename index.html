@@ -108,7 +108,7 @@
         <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
             <div class="ml-3 inline-flex rounded-md shadow">
                 <p class="text-base font-medium text-white">
-                    Ma priorité est toujours de produire des logiciels de haute qualité qui répondent à toutes les
+                    Ma priorité est toujours de produire des sites de haute qualité qui répondent à toutes les
                     exigences de mes clients.
                 </p>
             </div>
@@ -164,7 +164,11 @@
             </template>
         </div>
     </div>
+    <div class="z-50 fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center" x-show="open" @click="closeImg()">
+        <img :src="img" class="max-w-full max-h-full m-4 rounded" alt="Opened Image" />
+    </div>
 </section>
+
 <!-- section Compétences -->
 <section id="competences" class="py-2 bg-indigo-500 flex justify-center items-center">
     <div class="p-5 lg:max-w-7xl lg:mx-auto lg:flex lg:items-center lg:justify-between">

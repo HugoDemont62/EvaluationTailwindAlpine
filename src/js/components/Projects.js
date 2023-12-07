@@ -4,6 +4,8 @@ export default function (datas) {
     uniqueCategories: [],
     filteredProjects: [],
     filter: '',
+    img: '',
+    open: false,
     fetchData: async function () {
       const response = await fetch(datas);
       const data = await response.json();
@@ -18,8 +20,7 @@ export default function (datas) {
     applyFilter: function() {
       if (this.filter) {
         this.filteredProjects = this.projects.filter(project => project.category.includes(this.filter));
-      }
-      else {
+      } else {
         this.filteredProjects = this.projects;
       }
     },
@@ -33,8 +34,8 @@ export default function (datas) {
       this.open = false;
     },
 
-    init: function () {
-      this.fetchData();
+    init: async function () {
+      await this.fetchData();
     },
   };
 }
