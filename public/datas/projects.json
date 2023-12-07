@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "name": "Ecommerce Site",
+    "category": [
+      "Web Development",
+      "UI/UX Design"
+    ],
+    "image": "https://dummyimage.com/600x400/000/fff&text=Ecommerce+Site"
+  },
+  {
+    "id": 2,
+    "name": "Mobile Game",
+    "category": [
+      "Game Development",
+      "Mobile"
+    ],
+    "image": "https://dummyimage.com/600x400/000/fff&text=Mobile+Game"
+  },
+  {
+    "id": 3,
+    "name": "Finance App",
+    "category": [
+      "Web Development",
+      "Mobile",
+      "Finance"
+    ],
+    "image": "https://dummyimage.com/600x400/000/fff&text=Finance+App"
+  },
+  {
+    "id": 4,
+    "name": "Music Website",
+    "category": [
+      "Web Development",
+      "Music"
+    ],
+    "image": "https://dummyimage.com/600x400/000/fff&text=Music+Website"
+  },
+  {
+    "id": 5,
+    "name": "Travel App",
+    "category": [
+      "Mobile",
+      "Travel",
+      "UI/UX Design"
+    ],
+    "image": "https://dummyimage.com/600x400/000/fff&text=Travel+App"
+  }
+]

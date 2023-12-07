@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Vite App</title>
+</head>
+<body>
+<nav x-data="menu()" class="bg-blue-800 fixed w-full z-10">
+    <div class="md:hidden">
+        <div class="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-blue-200 font-bold text-xl md:text-2xl">Hugo Demont</h1>
+                </div>
+                <div class="md:hidden">
+                    <button x-on:click="toggleMenu()"
+                            class="text-white hover:text-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-blue-800 focus:ring-white">
+                        <i x-show="!menuOpen" class="fa-solid fa-bars"></i>
+                        <i x-show="menuOpen" class="fa-regular fa-x"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div x-show="menuOpen" x-on:click.away="menuOpen = false" class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+            <a href="#accueil"
+               class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-900">Accueil</a>
+            <a href="#a-propos" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-900">À
+                Propos</a>
+            <a href="#portfolio"
+               class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-900">Portfolio</a>
+            <a href="#competences" class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-900">
+                Compétences</a>
+            <a href="#contact"
+               class="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-900">Contact</a>
+        </div>
+    </div>
+
+    <div class="hidden md:block">
+        <div class="px-2 mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div class="relative flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-blue-200 font-bold text-xl md:text-2xl">Hugo Demont</h1>
+                </div>
+                <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+                    <a href="#accueil" class="whitespace-nowrap text-base font-medium text-white hover:text-blue-900">
+                        Accueil
+                    </a>
+                    <a href="#a-propos"
+                       class="ml-8 whitespace-nowrap text-base font-medium text-white hover:text-blue-900">
+                        À Propos
+                    </a>
+                    <a href="#portfolio"
+                       class="ml-8 whitespace-nowrap text-base font-medium text-white hover:text-blue-900">
+                        Portfolio
+                    </a>
+                    <a href="#competences"
+                       class="ml-8 whitespace-nowrap text-base font-medium text-white hover:text-blue-900">
+                        Compétences
+                    </a>
+                    <a href="#contact"
+                       class="ml-8 whitespace-nowrap text-base font-medium text-white hover:text-blue-900">
+                        Contact
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- section Accueil -->
+<section id="accueil" class="h-screen bg-indigo-100 flex justify-center items-center flex-col sm:flex-row">
+    <div class="flex flex-col items-center">
+        <div class="md:max-w-2xl mx-3 md:mx-0 sm:p-10 text-center sm:text-left bg-white rounded-xl shadow-md overflow-hidden md:flex items-center p-2">
+            <div class="space-y-4 sm:pr-10">
+                <h1 class="text-4xl text-gray-900 mb-2">Hugo Demont</h1>
+                <p class="text-xl text-gray-700">Développeur en alternance</p>
+            </div>
+            <div class="mx-auto sm:ml-auto mt-5 sm:mt-0">
+                <img class="rounded-full h-32 w-32 sm:h-48 sm:w-48 object-cover mx-auto sm:mx-0"
+                     src="public/assets/image_hugodemont.jpg" alt="image de Hugo Demont">
+            </div>
+        </div>
+        <div class="animate-bounce mt-5">
+            <i class="fa-solid fa-arrow-down text-4xl"></i>
+        </div>
+    </div>
+</section>
+
+<!-- section A propos -->
+<section class="bg-indigo-600 py-25 px-4 sm:px-6 lg:py-16 lg:px-8 z-10">
+    <div class="lg:max-w-7xl lg:mx-auto lg:flex lg:items-center lg:justify-between">
+        <h2 class="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+            <span class="block">Bonjour, je suis</span>
+            <span class="block text-indigo-400">Développeur Magento PHP & Jeux Vidéo.</span>
+        </h2>
+        <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
+            <div class="ml-3 inline-flex rounded-md shadow">
+                <p class="text-base font-medium text-white">
+                    Ma priorité est toujours de produire des logiciels de haute qualité qui répondent à toutes les
+                    exigences de mes clients.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="px-20" x-data="{ openPanel: null }">
+        <div @click="openPanel === 1 ? openPanel = null : openPanel = 1" class="cursor-pointer faq-item bg-white shadow-md rounded-md my-4 max-w-xl mx-auto p-4 sm:p-6 lg:p-8">
+            <h3 class="text-blue-600 mt-2 text-2xl">Qu'est-ce que Magento?</h3>
+            <p x-show.transition.origin.top.duration.1000ms="openPanel === 1" class="text-blue-500 mt-2">Magento est une plateforme de commerce électronique open source écrite en PHP.</p>
+        </div>
+        <div @click="openPanel === 2 ? openPanel = null : openPanel = 2" class="cursor-pointer faq-item bg-white shadow-md rounded-md my-4 max-w-xl mx-auto p-4 sm:p-6 lg:p-8">
+            <h3 class="text-blue-600 mt-2 text-2xl">Qu'est-ce que PHP?</h3>
+            <p x-show.transition.origin.top.duration.1000ms="openPanel === 2" class="text-blue-500 mt-2">PHP est un langage de script côté serveur couramment utilisé pour le développement web. Il peut être incorporé dans le HTML.</p>
+        </div>
+        <div @click="openPanel === 3 ? openPanel = null : openPanel = 3" class="cursor-pointer faq-item bg-white shadow-md rounded-md my-4 max-w-xl mx-auto p-4 sm:p-6 lg:p-8">
+            <h3 class="text-blue-600 mt-2 text-2xl">Pourquoi choisir le développement web?</h3>
+            <p x-show.transition.origin.top.duration.1000ms="openPanel === 3" class="text-blue-500 mt-2">Le développement web est un domaine en pleine croissance en raison de l'expansion de l'Internet. Il offre également une grande flexibilité et diversité dans les travaux.</p>
+        </div>
+    </div>
+</section>
+
+<section id="portfolio" class="h-screen bg-indigo-100 flex flex-col justify-center items-center" x-data="Projects()">
+    <div class="grid grid-cols-3 gap-4 p-4">
+        <template x-for="project in filteredProjects()" :key="project.id">
+            <div class="bg-white rounded overflow-hidden shadow-lg">
+                <img class="h-48 w-full object-cover" :src="project.image" alt="Project image">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2" x-text="project.name"></div>
+                    <p class="text-grey-darker text-base" x-text="project.category.join(', ')"></p>
+                </div>
+            </div>
+        </template>
+    </div>
+
+    <!-- Le reste du code reste le même... -->
+</section>
+
+<section id="competences" class="h-screen bg-yellow-500 flex justify-center items-center">
+    <h1 class="text-white text-5xl">Compétences</h1>
+</section>
+
+<section id="contact" class="h-screen bg-purple-500 flex justify-center items-center">
+    <h1 class="text-white text-5xl">Contact</h1>
+</section>
+<script src="https://kit.fontawesome.com/36ce270369.js" crossorigin="anonymous"></script>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
